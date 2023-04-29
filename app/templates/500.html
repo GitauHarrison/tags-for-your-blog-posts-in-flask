@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <div class="flex items-center justify-center font-bold text-2xl">
+        <div class="grid grid-cols-1">
+            {{ title }}
+        </div>
+    </div>
+    <div class="flex items-center justify-center text-center">
+        <div class="grid grid-cols-1">
+            <img src="{{ url_for('static', filename='images/500.png') }}" alt="500">
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
+                Unexpected error. Sorry. Return to the <a class="text-blue-400" href="{{ url_for('index') }}">home page</a>.
+            </p>
+        </div>
+    </div>
+{% endblock %}

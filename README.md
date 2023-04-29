@@ -1,6 +1,20 @@
 # Tags For Your Blog Posts
 
+![Tags System](/app/static/images/tags_system.gif)
+
 Add tags to your blog posts. Find blog posts based on your tags.
+
+## Technologies Used
+
+- Tailwind CSS for styling and cross-browser responsiveness
+- Flask-migrate
+- Flask-sqlalchemy
+- SQLite
+
+## Features
+
+- User data saved to a database
+- Data filter using tags
 
 ## Testing 
 
@@ -41,3 +55,7 @@ Add tags to your blog posts. Find blog posts based on your tags.
     ```
 
 - Paste your localhost link in your browser to see the application's GUI.
+
+# Reference:
+
+- [Add tags to your Flask blog posts](https://github.com/GitauHarrison/notes/blob/master/tags_flask_blog_posts.md)

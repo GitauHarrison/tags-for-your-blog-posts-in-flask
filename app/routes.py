@@ -1,22 +1,23 @@
-from flask import render_template, url_for, redirect, request
+from flask import render_template, url_for, redirect, request, flash
 from app.forms import BlogForm
 from app.models import Tag, Post, User
 from app import app, db
 
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     form = BlogForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
-        blog = Post(body=form.body.data, author=user.username)
+        post = Post(body=form.body.data, author=user.username)
         for tag in form.tags.data:
-            blog.tags.append(Tag(name=tag))
+            post.tags.append(Tag(name=tag))
         db.session.add(user)
-        db.session.add(blog)
+        db.session.add(post)
         db.session.commit()
-        return redirect(url_for('home'))
+        flash('Post saved')
+        return redirect(url_for('index'))        
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)

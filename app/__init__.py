@@ -33,7 +33,7 @@ if not app.debug:
         app.logger.addHandler(file_handler)
 
     app.logger.setLevel(logging.INFO)
-    app.logger.info('byvd startup')
+    app.logger.info('Tags System Startup')
 
 
 from app import routes, errors

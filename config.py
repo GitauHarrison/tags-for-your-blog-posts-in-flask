@@ -16,3 +16,7 @@ class Config(object):
 
     # Pagination
     POSTS_PER_PAGE = int(os.environ.get('POSTS_PER_PAGE'))
+
+    # Logs
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+

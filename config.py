@@ -19,4 +19,3 @@ class Config(object):
 
     # Logs
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
-
